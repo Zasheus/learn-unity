@@ -27,9 +27,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(500 * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKeyDown("space") && isGrounded) 
+        if (Input.GetKey("space") && isGrounded) 
         {
-            rb.AddForce(0, 2000 * Time.deltaTime, 0);
+            rb.AddForce(0, 7000 * Time.deltaTime, 0);
             isGrounded = false;
         }
     }
