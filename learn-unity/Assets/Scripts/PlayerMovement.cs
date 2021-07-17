@@ -34,5 +34,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(0, 7000 * Time.deltaTime, 0);
             isGrounded = false;
         }
+
+        if (rb.position.y < -1) {
+            FindObjectOfType<GameManager>().GameOver();
+        }
     }
 }
