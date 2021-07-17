@@ -6,10 +6,11 @@ public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement movement;
 
+
     void OnCollisionEnter(Collision collisionInfo) {
-        if (collisionInfo.gameObject.name == "Wall") {
-            Debug.Log("You Suck");
+        if (collisionInfo.gameObject.CompareTag("Walls")) {
             movement.enabled = false;
+            FindObjectOfType<GameManager>().GameOver();
         }
     }
 }
