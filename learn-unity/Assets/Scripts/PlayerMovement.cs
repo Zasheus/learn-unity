@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public bool isGrounded;
     public int forwardForce = 1000;
+    public int sidewaysForce = 500;
 
     void OnCollisionStay() {
         isGrounded = true;
@@ -20,12 +21,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("a")) 
         {
-            rb.AddForce(-500 * Time.deltaTime, 0, 0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("d")) 
         {
-            rb.AddForce(500 * Time.deltaTime, 0, 0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
         }
 
         if (Input.GetKey("space") && isGrounded) 
